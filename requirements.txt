@@ -1,0 +1,12 @@
+streamlit==1.35.0
+pandas==2.2.2
+matplotlib==3.8.4
+openpyxl==3.1.2
+plotly
+geopandas
+
+Notes:
+streamlit: is used for building the web app.
+pandas: is required for data manipulation.
+matplotlib: is used for plotting.
+openpyxl: is needed to read .xlsx files for the Cycle Slip Ratio section.
