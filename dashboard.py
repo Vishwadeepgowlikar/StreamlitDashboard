@@ -14,7 +14,7 @@ import os
 
 
 # === Static Setup ===
-DATA_FOLDER = 'E:/Vishwa'  # Change this if needed
+DATA_FOLDER = 'https://github.com/Vishwadeepgowlikar/StreamlitDashboard'  # Change this if needed
 
 
 # === Site and location data ===
@@ -148,7 +148,7 @@ if parameter == "MULTIPATH":
             st.warning(f"Unknown constellation: {const}")
             continue
 
-        file_path = os.path.join(f"E:/Vishwa/{selected_site}", f"{filename}.xlsx")
+        file_path = os.path.join(f"https://github.com/Vishwadeepgowlikar/StreamlitDashboard/{selected_site}", f"{filename}.xlsx")
         st.write(f"Looking for file: {file_path}")
 
         if os.path.exists(file_path):
