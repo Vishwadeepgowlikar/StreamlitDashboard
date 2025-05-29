@@ -5,7 +5,6 @@ openpyxl==3.1.2
 plotly
 geopandas
 pydeck 
-os
 csv
 numpy 
 leafmap
