@@ -429,8 +429,13 @@ if parameter == "CYCLE SLIP RATIO":
                         '# of slips/nobs (MP5)',
                         '# of slips/nobs (GF)',
                         '# of slips/nobs (MW)',
-                        '# of slips/nobs (IOD)'
+                        '# of slips/nobs (IOD(L1)'
                     ]
+       # Corresponding custom legend labels
+       custom_labels = [
+      'CSR_MP1', 'CSR_MP2', 'CSR_MP5', 'CSR_GF', 'CSR_MW', 'CSR_IOD(L1)'
+       ]
+
 
                     def transform_fraction(fraction_str):
                         try:
