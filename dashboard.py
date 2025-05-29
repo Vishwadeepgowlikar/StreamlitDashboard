@@ -399,7 +399,7 @@ if parameter == "CYCLE SLIP RATIO":
             "BEIDOU": "C_SYS_parameters"
         }
 
-        site_folder_path = os.path.join(f"{ selected_site})
+        site_folder_path = os.path.join(f"{selected_site}")
         if not os.path.exists(site_folder_path):
             st.error(f"Site folder does not exist: {site_folder_path}")
         else:
