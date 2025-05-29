@@ -298,7 +298,7 @@ custom_legend_map = {
 if parameter == "SNR":
     st.subheader(f"SNR Daily Mean for {selected_site}")
 
-    base_path = os.path.join("E:/Vishwa", f"{selected_site}_SNR", selected_site)
+    base_path = os.path.join("https://github.com/Vishwadeepgowlikar/StreamlitDashboard", f"{selected_site}_SNR", selected_site)
 
     for const in constellation:
         subfolder = constellation_folder_map.get(const)
@@ -399,7 +399,7 @@ if parameter == "CYCLE SLIP RATIO":
             "BEIDOU": "C_SYS_parameters"
         }
 
-        site_folder_path = os.path.join("E:/Vishwa", selected_site)
+        site_folder_path = os.path.join("https://github.com/Vishwadeepgowlikar/StreamlitDashboard", selected_site)
         if not os.path.exists(site_folder_path):
             st.error(f"Site folder does not exist: {site_folder_path}")
         else:
@@ -409,7 +409,7 @@ if parameter == "CYCLE SLIP RATIO":
                     st.warning(f"No file mapping for constellation: {const}")
                     continue
 
-                file_path = os.path.join(f"E:/Vishwa/{selected_site}",f"{file_name}.xlsx")
+                file_path = os.path.join(f"https://github.com/Vishwadeepgowlikar/StreamlitDashboard/{selected_site}",f"{file_name}.xlsx")
                 if not os.path.exists(file_path):
                     st.warning(f"File not found: {file_path}")
                     continue
