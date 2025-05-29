@@ -13,7 +13,7 @@ import os
 
 
 # === Static Setup ===
-DATA_FOLDER = 'StreamlitDashboard'  # Change this if needed
+#DATA_FOLDER = 'StreamlitDashboard'  # Change this if needed
 
 
 # === Site and location data ===
@@ -93,7 +93,7 @@ st.pydeck_chart(pdk.Deck(
 
 if parameter == "DATA INTEGRITY":
     
-    file_name = os.path.join(DATA_FOLDER, f"{selected_site}_integrity.xlsx")
+    file_name = os.path.join(f"{selected_site}_integrity.xlsx")
     st.write(f"Looking for file: `{file_name}`")
 
     if os.path.exists(file_name):
@@ -147,7 +147,7 @@ if parameter == "MULTIPATH":
             st.warning(f"Unknown constellation: {const}")
             continue
 
-        file_path = os.path.join(f"StreamlitDashboard/{selected_site}", f"{filename}.xlsx")
+        file_path = os.path.join(f"S{selected_site}", f"{filename}.xlsx")
         st.write(f"Looking for file: {file_path}")
 
         if os.path.exists(file_path):
@@ -298,7 +298,7 @@ custom_legend_map = {
 if parameter == "SNR":
     st.subheader(f"SNR Daily Mean for {selected_site}")
 
-    base_path = os.path.join("StreamlitDashboard", f"{selected_site}_SNR", selected_site)
+    base_path = os.path.join(f"{selected_site}_SNR", selected_site)
 
     for const in constellation:
         subfolder = constellation_folder_map.get(const)
@@ -399,7 +399,7 @@ if parameter == "CYCLE SLIP RATIO":
             "BEIDOU": "C_SYS_parameters"
         }
 
-        site_folder_path = os.path.join("StreamlitDashboard", selected_site)
+        site_folder_path = os.path.join(f"{selected_site}")
         if not os.path.exists(site_folder_path):
             st.error(f"Site folder does not exist: {site_folder_path}")
         else:
@@ -409,7 +409,7 @@ if parameter == "CYCLE SLIP RATIO":
                     st.warning(f"No file mapping for constellation: {const}")
                     continue
 
-                file_path = os.path.join(f"StreamlitDashboard/{selected_site}",f"{file_name}.xlsx")
+                file_path = os.path.join(f"{selected_site}",f"{file_name}.xlsx")
                 if not os.path.exists(file_path):
                     st.warning(f"File not found: {file_path}")
                     continue
