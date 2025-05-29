@@ -94,7 +94,7 @@ st.pydeck_chart(pdk.Deck(
 if parameter == "DATA INTEGRITY":
     
     file_name = os.path.join(f"{selected_site}_integrity.xlsx")
-    st.write(f"Looking for file: `{file_name}`")
+    #st.write(f"Looking for file: `{file_name}`")
 
     if os.path.exists(file_name):
         try:
@@ -147,7 +147,7 @@ if parameter == "MULTIPATH":
             st.warning(f"Unknown constellation: {const}")
             continue
 
-        file_path = os.path.join(f"S{selected_site}", f"{filename}.xlsx")
+        file_path = os.path.join(f"{selected_site}", f"{filename}.xlsx")
         st.write(f"Looking for file: {file_path}")
 
         if os.path.exists(file_path):
