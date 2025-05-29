@@ -107,7 +107,7 @@ if parameter == "DATA INTEGRITY":
             if not filtered.empty:
                 fig, ax = plt.subplots()
                 ax.plot(filtered['DATE'], filtered['Percentage'], marker='o', linestyle='-')
-                ax.set_title(f'Data Integrity: {selected_site}')
+                ax.set_title(f'{selected_site} - {const} Data Integrity')
                 ax.set_xlabel('Date')
                 ax.set_ylabel('Percentage (%)')
                 ax.grid(True)
