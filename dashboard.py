@@ -399,7 +399,7 @@ if parameter == "CYCLE SLIP RATIO":
             "BEIDOU": "C_SYS_parameters"
         }
 
-        site_folder_path = os.path.join(f"{selected_site}")
+        site_folder_path = os.path.join(f"{ selected_site})
         if not os.path.exists(site_folder_path):
             st.error(f"Site folder does not exist: {site_folder_path}")
         else:
@@ -409,7 +409,7 @@ if parameter == "CYCLE SLIP RATIO":
                     st.warning(f"No file mapping for constellation: {const}")
                     continue
 
-                file_path = os.path.join(f"{selected_site}",f"{file_name}.xlsx")
+                file_path = os.path.join(site_folder_path, f"{file_name}.xlsx")
                 if not os.path.exists(file_path):
                     st.warning(f"File not found: {file_path}")
                     continue
@@ -423,18 +423,27 @@ if parameter == "CYCLE SLIP RATIO":
                     df['DATE'] = pd.to_datetime(df['DATE'], errors='coerce')
                     df = df.dropna(subset=['DATE'])
 
+                    # Column names to transform
                     fraction_columns = [
                         '# of slips/nobs (MP1)',
                         '# of slips/nobs (MP2)',
                         '# of slips/nobs (MP5)',
                         '# of slips/nobs (GF)',
                         '# of slips/nobs (MW)',
-                        '# of slips/nobs (IOD(L1)'
+                        '# of slips/nobs (IOD(L1))'
                     ]
-# Corresponding custom legend labels
-custom_labels = ['CSR_MP1', 'CSR_MP2', 'CSR_MP5', 'CSR_GF', 'CSR_MW', 'CSR_IOD(L1)']
 
+                    # Legend name mapping
+                    legend_name_map = {
+                        '# of slips/nobs (MP1)': 'CSR_MP1',
+                        '# of slips/nobs (MP2)': 'CSR_MP2',
+                        '# of slips/nobs (MP5)': 'CSR_MP5',
+                        '# of slips/nobs (GF)': 'CSR_GF',
+                        '# of slips/nobs (MW)': 'CSR_MW',
+                        '# of slips/nobs (IOD(L1))': 'CSR_IOD'
+                    }
 
+                    # Function to compute CSR
                     def transform_fraction(fraction_str):
                         try:
                             num, denom = map(float, str(fraction_str).split('/'))
@@ -443,6 +452,7 @@ custom_labels = ['CSR_MP1', 'CSR_MP2', 'CSR_MP5', 'CSR_GF', 'CSR_MW', 'CSR_IOD(L
                         except:
                             return None
 
+                    # Group by date and calculate transformed CSR
                     all_data = []
                     for date_val, group in df.groupby(df['DATE'].dt.date):
                         row = {'DATE': pd.to_datetime(date_val)}
@@ -464,17 +474,16 @@ custom_labels = ['CSR_MP1', 'CSR_MP2', 'CSR_MP5', 'CSR_GF', 'CSR_MW', 'CSR_IOD(L
                         st.warning(f"No Cycle Slip Ratio data available for {const} in selected date range.")
                         continue
 
-                    # Plotting
-                    # Plotting
+                    # Plotting with legend name mapping
                     fig, ax = plt.subplots(figsize=(10, 5))
                     for col in fraction_columns:
                         if col in df_plot.columns:
-                            ax.plot(df_plot['DATE'], df_plot[col], marker='o', label=col)
+                            legend_label = legend_name_map.get(col, col)
+                            ax.plot(df_plot['DATE'], df_plot[col], marker='o', label=legend_label)
 
                     ax.set_title(f"{selected_site} - {const} Cycle Slip Ratio")
                     ax.set_xlabel("Date")
 
-                    # ✅ Only apply fixed y-axis range for constellations other than IRNSS
                     if const != "IRNSS":
                         plt.ylim(0, 110)
                         plt.yticks(np.arange(0, 111, 10))
@@ -485,7 +494,6 @@ custom_labels = ['CSR_MP1', 'CSR_MP2', 'CSR_MP5', 'CSR_GF', 'CSR_MW', 'CSR_IOD(L
                     ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
                     fig.autofmt_xdate()
                     st.pyplot(fig)
-
 
                 except Exception as e:
                     st.error(f"Error processing file {file_name}: {e}")
