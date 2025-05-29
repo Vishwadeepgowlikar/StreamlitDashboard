@@ -369,11 +369,11 @@ if parameter == "SNR":
                 label = custom_legends.get(col, col)
                 ax.plot(df_plot["time"], df_plot[col], label=label)
 
-        ax.set_title(f"{selected_site} - {const} Mean SNR per Day")
+        ax.set_title(f"{selected_site} - {const} Signal-to-Noise Ratio")
         ax.set_xlabel("Date")
         plt.ylim(30, 50)
         plt.yticks(np.arange(30, 51, 1))
-        ax.set_ylabel("Mean SNR(dBHz)")
+        ax.set_ylabel("SNR(dBHz)")
         ax.legend()
         ax.grid(True)
         ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
