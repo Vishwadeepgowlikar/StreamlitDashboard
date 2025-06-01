@@ -90,8 +90,8 @@ st.markdown(
 # === Site map ===
 site_map_container = st.container()
 if not selected_site:
-st.subheader("Site Map")
-st.pydeck_chart(pdk.Deck(
+   st.subheader("Site Map")
+   st.pydeck_chart(pdk.Deck(
     map_style="mapbox://styles/mapbox/light-v9",
     initial_view_state=pdk.ViewState(
         latitude=20.0,
