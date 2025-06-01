@@ -63,9 +63,29 @@ else:
     start_date = end_date = date_input  # Single date selected
 
 # === Page Title ===
-st.image("logo.png", width=150)  # Adjust width as needed
-st.markdown('<h1 style="color:red;">QUALITY CHECK FOR IGS STATIONs IN INDIA</h1>', unsafe_allow_html=True)
+st.image("test.png", width=150)
+  # Adjust width as needed
+st.markdown(
+    '<h1 style="color:red; font-family:Times New Roman, serif; font-size:28px;">QUALITY CHECK FOR IGS STATIONS IN INDIA</h1>',
+    unsafe_allow_html=True
+)
+# Import the font from Google Fonts
+st.markdown("""
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+    .italianno-text {
+        font-family: 'Play fair Display', serif;
+        font-size: 16px;
+        color: brown;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
+# Use the font on your paragraph
+st.markdown(
+    '<p class="italianno-text">This interactive Dashboard is designed to visualize quality metrics for IGS stations located in India. The graphed parameters include Multipath, Cycle slip, SNR, and data integrity observations for the period from 01-01-2025 to 31-01-2025.</p>',
+    unsafe_allow_html=True
+)
 
 # === Site map ===
 site_map_container = st.container()
