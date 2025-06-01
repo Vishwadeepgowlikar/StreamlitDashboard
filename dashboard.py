@@ -68,6 +68,8 @@ st.markdown('<h1 style="color:red;">QUALITY CHECK FOR IGS STATIONs IN INDIA</h1>
 
 
 # === Site map ===
+site_map_container = st.container()
+if not selected_site:
 st.subheader("Site Map")
 st.pydeck_chart(pdk.Deck(
     map_style="mapbox://styles/mapbox/light-v9",
@@ -87,6 +89,7 @@ st.pydeck_chart(pdk.Deck(
         ),
     ],
 ))
+else:
 
 # === Data Integrity Plot ===
 #st.title("DATA INTEGRITY PLOT")
@@ -138,7 +141,10 @@ constellation_files = {
 # Plotting Multipath
 if parameter == "MULTIPATH":
     st.subheader(f"Multipath Parameters for {selected_site}")
-
+    if not selected_site:
+        st.warning("Please select at least one IGS station for Multipath.")
+        
+    else:
     # Loop over selected constellations
     for const in constellation:
         # Get the file name based on constellation, skip if unknown
@@ -297,7 +303,10 @@ custom_legend_map = {
 
 if parameter == "SNR":
     st.subheader(f"SNR Daily Mean for {selected_site}")
-
+    if not constellation:
+        st.warning("Please select at least one constellation for SNR.")
+        
+    else:
     base_path = os.path.join(f"{selected_site}_SNR", selected_site)
 
     for const in constellation:
