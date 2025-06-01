@@ -25,8 +25,9 @@ site_data = pd.DataFrame({
 
 # === Sidebar filters ===
 st.sidebar.title("Filters")
-parameter = st.sidebar.selectbox("Parameter", ['SNR', 'CYCLE SLIP RATIO', 'MULTIPATH','DATA INTEGRITY'])
-selected_site = st.sidebar.selectbox("IGS Station", site_data['site'])
+parameter = st.sidebar.selectbox("Parameter", ['Select','SNR', 'CYCLE SLIP RATIO', 'MULTIPATH','DATA INTEGRITY'])
+site_list = [''] + site_data['site'].tolist()
+selected_site = st.sidebar.selectbox("IGS Station", site_list)
 constellation = st.sidebar.multiselect("Constellation", ['GPS', 'GLONASS', 'GALILEO', 'BEIDOU','QZSS','IRNSS'])
 
 # ✅ Safe date input: single or range
