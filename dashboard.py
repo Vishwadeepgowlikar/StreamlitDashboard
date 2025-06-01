@@ -166,7 +166,7 @@ if parameter == "MULTIPATH":
         
     else:
     # Loop over selected constellations
-    for const in constellation:
+     for const in constellation:
         # Get the file name based on constellation, skip if unknown
         filename = constellation_files.get(const)
         if filename is None:
@@ -327,7 +327,7 @@ if parameter == "SNR":
         st.warning("Please select at least one constellation for SNR.")
         
     else:
-    base_path = os.path.join(f"{selected_site}_SNR", selected_site)
+     base_path = os.path.join(f"{selected_site}_SNR", selected_site)
 
     for const in constellation:
         subfolder = constellation_folder_map.get(const)
