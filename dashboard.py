@@ -119,7 +119,7 @@ else:
     file_name = os.path.join(f"{selected_site}_integrity.xlsx")
     #st.write(f"Looking for file: `{file_name}`")
 
-     if os.path.exists(file_name):
+    if os.path.exists(file_name):
         try:
             df = pd.read_excel(file_name, parse_dates=['DATE'])
             df['DATE'] = pd.to_datetime(df['DATE'], errors='coerce')
