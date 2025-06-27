@@ -1,23 +1,7 @@
-streamlit==1.35.0 \
-    --hash=sha256:f2218c73b12d25b67e3322d9b6e1d1e9c7eb87038868213d8606941ccf6c8466
+streamlit==1.35.0
+pandas==2.2.2
+matplotlib==3.8.4
+openpyxl==3.1.2
+plotly
+geopandas
 
-pandas==2.2.2 \
-    --hash=sha256:fc38527bd4099ac48e17665066c7801dff8c2a1cbf1462f28d0e024c4532ffb3
-
-matplotlib==3.8.4 \
-    --hash=sha256:3f1f5a89a17dc1e588aa4e0cc13a3e13a1ad1aa0c86f23b5b10c6b15b5ad62ae
-
-openpyxl==3.1.2 \
-    --hash=sha256:32ea4603aa6d8f3697a39f72d54a4d7db80be5ac441b85b0d9db343abb453bb2
-
-plotly==5.22.0 \
-    --hash=sha256:75e30b0b6254ce764818c4c891be22eb321b2367b4f5ea0d45bc399f0b4a4a12
-
-geopandas==0.14.4 \
-    --hash=sha256:acfe70711c06e95c3b3a89623895be18c176e93a4dca66179f24c456ed87128f
-
-pydeck==0.8.1b0 \
-    --hash=sha256:662f180ec5c1c502ea620340c6b71f7ec924bf4a35e44374e82fa97bc9422f02
-
-numpy==1.26.4 \
-    --hash=sha256:f234189fa1c7c020cb978da4625dbd5c4b5b5a6c36c87b20fc28c8fc78ec066a
