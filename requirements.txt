@@ -2,12 +2,7 @@ streamlit==1.35.0
 pandas==2.2.2
 matplotlib==3.8.4
 openpyxl==3.1.2
-plotly
-geopandas
-pydeck 
-numpy 
-
-
-
-
-
+plotly==5.22.0
+geopandas==0.14.4
+pydeck==0.8.1b0
+numpy==1.26.4
