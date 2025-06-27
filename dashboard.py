@@ -85,7 +85,7 @@ st.markdown("""
 
 # Use the font on your paragraph
 st.markdown(
-    '<p class="italianno-text">This interactive Dashboard is designed to visualize quality metrics for IGS stations located in India. The graphed parameters include Multipath, Cycle slip, SNR, and data integrity observations for the period from 01-01-2025 to 31-01-2025.</p>',
+    '<p class="italianno-text">This interactive Dashboard is designed to visualize quality metrics for IGS stations located in India. The graphed parameters include Multipath, Cycle slip, SNR, and data integrity observations for the period from 01-01-2025 to 31-01-2025.This dashboard is developed purely using Python programming language</p>',
     unsafe_allow_html=True
 )
 
@@ -141,7 +141,7 @@ else:
 
                 fig.update_layout(
                 title=f"{selected_site} - Data Integrity",
-                xaxis_title="Date",
+                xaxis_title="Date(2025)",
                 yaxis_title="Percentage (%)",
                 hovermode="x unified"
                 )
@@ -207,7 +207,7 @@ if parameter == "MULTIPATH":
 
                 fig.update_layout(
                 title=f"{const} - Multipath Parameters",
-                xaxis_title="Date",
+                xaxis_title="Date(2025)",
                 yaxis_title="Standard Deviation",
                 hovermode="x unified"
                 )
@@ -418,7 +418,7 @@ if parameter == "SNR":
 
         fig.update_layout(
         title=f"{selected_site} - {const} Signal-to-Noise Ratio",
-        xaxis_title="Date",
+        xaxis_title="Date(2025)",
         yaxis_title="SNR (dBHz)",
         yaxis=dict(range=[30, 50], dtick=1),
         hovermode="x unified"
@@ -534,7 +534,7 @@ if parameter == "CYCLE SLIP RATIO":
 
                     fig.update_layout(
                     title=f"{selected_site} - {const} Cycle Slip Ratio",
-                    xaxis_title="Date",
+                    xaxis_title="Date(2025)",
                     yaxis_title="Cycle Slip Ratio (CSR)",
                     yaxis=dict(range=[0, 110], dtick=10) if const != "IRNSS" else None,
                     hovermode="x unified"
