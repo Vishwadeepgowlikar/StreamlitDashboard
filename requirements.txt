@@ -6,7 +6,6 @@ plotly
 geopandas
 pydeck 
 numpy 
-leafmap
 
 
 
