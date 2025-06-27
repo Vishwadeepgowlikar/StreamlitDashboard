@@ -141,10 +141,7 @@ else:
 
                 fig.update_layout(
                 title=f"{selected_site} - Data Integrity",
-                xaxis=dict(
-                   title="Date(2025)",
-                   tickformat="%b %d"
-                ),    
+                xaxis_title="Date",      
                 yaxis_title="Percentage (%)",
                 hovermode="x unified"
                 )
