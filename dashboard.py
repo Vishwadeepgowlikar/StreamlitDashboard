@@ -85,7 +85,7 @@ st.markdown("""
 
 # Use the font on your paragraph
 st.markdown(
-    '<p class="italianno-text">This interactive Dashboard is designed to visualize quality metrics for IGS stations located in India. The graphed parameters include Multipath, Cycle slip, SNR, and data integrity observations for the period from 01-01-2025 to 31-01-2025.</p>',
+    '<p class="italianno-text">This interactive Dashboard is designed to visualize quality metrics for IGS stations located in India. The graphed parameters include Multipath, Cycle slip, SNR, and data integrity observations for the period from 01-01-2025 to 31-01-2025.This dashboard is developed purely using Python.</p>',
     unsafe_allow_html=True
 )
 
