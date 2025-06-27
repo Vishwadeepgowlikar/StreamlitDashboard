@@ -141,7 +141,10 @@ else:
 
                 fig.update_layout(
                 title=f"{selected_site} - Data Integrity",
-                xaxis_title="Date",
+                xaxis=dict(
+                   title="Date(2025)",
+                   tickformat="%b %d"
+                ),    
                 yaxis_title="Percentage (%)",
                 hovermode="x unified"
                 )
@@ -207,7 +210,7 @@ if parameter == "MULTIPATH":
 
                 fig.update_layout(
                 title=f"{const} - Multipath Parameters",
-                xaxis_title="Date",
+                xaxis_title="Date(2025)",
                 yaxis_title="Standard Deviation",
                 hovermode="x unified"
                 )
@@ -418,7 +421,7 @@ if parameter == "SNR":
 
         fig.update_layout(
         title=f"{selected_site} - {const} Signal-to-Noise Ratio",
-        xaxis_title="Date",
+        xaxis_title="Date(2025)",
         yaxis_title="SNR (dBHz)",
         yaxis=dict(range=[30, 50], dtick=1),
         hovermode="x unified"
@@ -534,7 +537,7 @@ if parameter == "CYCLE SLIP RATIO":
 
                     fig.update_layout(
                     title=f"{selected_site} - {const} Cycle Slip Ratio",
-                    xaxis_title="Date",
+                    xaxis_title="Date(2025)",
                     yaxis_title="Cycle Slip Ratio (CSR)",
                     yaxis=dict(range=[0, 110], dtick=10) if const != "IRNSS" else None,
                     hovermode="x unified"
