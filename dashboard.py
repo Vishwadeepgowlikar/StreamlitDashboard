@@ -94,7 +94,7 @@ st.markdown(
 # === Site map using leafmap ===
 site_map_container = st.container()
 if not selected_site:
-    st.subheader("Site Map (Interactive)")
+    st.subheader("Site Map")
 
     m = leafmap.Map(center=[20.0, 80.0], zoom=4)
 
