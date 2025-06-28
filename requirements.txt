@@ -4,4 +4,4 @@ matplotlib
 openpyxl
 plotly
 geopandas
-
+leafmap
