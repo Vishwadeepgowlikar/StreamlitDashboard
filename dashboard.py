@@ -180,8 +180,7 @@ if parameter == "MULTIPATH":
             continue
 
         file_path = os.path.join(f"{selected_site}", f"{filename}.xlsx")
-        st.write(f"Looking for file: {file_path}")
-
+        
         if os.path.exists(file_path):
             df = pd.read_excel(file_path, parse_dates=["DATE"])
 
